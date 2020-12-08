@@ -1,0 +1,6 @@
+- init json package manager = npm init
+- automatically restart server using nodemon = npm install --save-dev nodemon
+  after nodemon installation open json package and change start script into "nodemon server.js" 
+  and running our server automatically use "nodemon start"
+- install express = npm install express --save
+- install middleware = npm install morgan --save
