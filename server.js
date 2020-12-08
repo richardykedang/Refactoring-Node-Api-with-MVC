@@ -107,16 +107,18 @@ const deleteTour = (req, res) => {
 // app.delete('/api/v1/tours/:id', deleteTour)
 
 //3.ROUTES
-app
-    .route('/api/v1/tours')
+const tourRoutes = express.Router()
+tourRoutes
+    .route('/')
     .get(getAlltours)
     .post(createTour);
-app
-    .route('/api/v1/tours/:id')
+tourRoutes
+    .route('/:id')
     .get(getTour)
     .patch(updateTour)
     .delete(deleteTour);
-   
+  
+app.use('/api/v1/tours', tourRoutes)
 //4. SERVER
 const PORT = 3000
 app.listen(3000, ()=>{
